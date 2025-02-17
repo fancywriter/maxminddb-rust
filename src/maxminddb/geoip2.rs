@@ -125,6 +125,8 @@ pub struct Domain<'a> {
 #[derive(Deserialize, Serialize, Clone, Debug)]
 pub struct Asn<'a> {
     #[serde(skip_serializing_if = "Option::is_none")]
+    pub network: Option<&'a str>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub autonomous_system_number: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub autonomous_system_organization: Option<&'a str>,
